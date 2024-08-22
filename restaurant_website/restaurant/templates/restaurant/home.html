@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Home</title>
+</head>
+<body>
+    <h1>Welcome to Our Restaurant</h1>
+    <h2>Today's Specials</h2>
+    <ul>
+        {% for item in specials %}
+            <li>{{ item.name }} - ${{ item.price }}</li>
+        {% empty %}
+            <li>No specials available today.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
