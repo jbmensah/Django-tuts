@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Home - Simple Blog{% endblock %}
+
+{% block content %}
+<p>Total posts: {{ posts|length }}</p>
+<ul>
+{% for post in posts %}
+	<li>
+		<strong>{{ post.title|upper }}</strong><br>
+		{% if post.author %}
+			<em>by {{ post.author }} on {{ post.date }}</em>
+		{% else %}
+			<em>by Anonymous on {{ post.date }}</em>
+		{% endif %}
+	</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jay B's Simple Blog</title>
+</head>
+<body>
+	<h1>Welcome to the Jay B's Simple Blog</h1>
+	<p>Here are the latest blog posts from Jay B:</p>
+
+	<!-- Placeholder for blog posts -->
+	<!-- <ul> -->
+		<!-- <li>Family Emblem</li>
+		<li>Some shit that happened today</li>
+		<li>Some shit I will do tomorrow</li> -->
+
+		<!-- loop through the list of posts and display them -->
+		<!-- {% for post in posts %}
+			<li>{{ post }}</li>
+		{% endfor %} -->
+
+		<!-- Display the Additional Data in the Template: -->
+		<!-- Here, we’re using the {{ post.title }}, {{ post.author }}, and {{ post.date }} variables to dynamically display each post’s details. -->
+		<!-- {% for post in posts %} -->
+			<!-- <li>
+				<strong>{{ post.title|truncatewords:2|upper }}</strong><br>
+				<em>by {{ post.author }} on {{ post.date }}</em>
+			</li> -->
+			<!-- <li>
+				<strong>{{ post.title|upper }}</strong><br>
+				{% if post.author %}
+					<em>by {{ post.author }} on {{ post.date }}</em>
+				{% else %}
+					<em>by Anonymous on {{ post.date }}</em>
+				{% endif %}
+			</li> -->
+		<!-- {% endfor %} -->
+	<!-- </ul> -->
+	<p>Total posts: {{ posts|length }}</p>
+	<ul>
+		{% for post in posts %}
+			<li>
+				<strong>{{ post.title|upper }}</strong><br>
+				{% if post.author %}
+					<em>by {{ post.author }} on {{ post.date }}</em>
+				{% else %}
+					<em>by Anonymous on {{ post.date }}</em>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

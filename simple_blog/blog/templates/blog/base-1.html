@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}BM's Simple Blog{% endblock %}</title>
+	{% block extra_head %}{% endblock %}
+</head>
+<body>
+	<header>
+		<h1>Simple Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="{% url 'about' %}">About</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+				<!-- More navigation links can go here -->
+			</ul>
+		</nav>
+	</header>
+
+	<aside>
+		{% block sidebar %}{% endblock %}
+	</aside>
+
+	<main>
+		{% block content %}
+			<section>
+				{% block section_title %}{% endblock %}
+				{% block section_content %}{% endblock %}
+			</section>
+		{% endblock %}
+	</main>
+	
+	<footer>
+		<p>&copy; 2024 Biney Mensah's (BM's) Simple Blog</p>
+	</footer>
+
+	{% block extra_body %}{% endblock %}
+</body>
+</html>
